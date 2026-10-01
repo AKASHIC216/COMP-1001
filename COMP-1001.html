@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Module 1: Computer Fundamentals | Introduction to Computers</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6f8;
+            color: #252525;
+            line-height: 1.7;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #172b4d;
+            color: white;
+            padding: 35px 20px;
+        }
+
+        .header-container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.3rem;
+        }
+
+        header p {
+            margin: 8px 0 0;
+            font-size: 1.1rem;
+            color: #dce5f2;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            background: #0d1f38;
+        }
+
+        nav .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 18px;
+            display: block;
+        }
+
+        nav a:hover {
+            background: #29476e;
+        }
+
+        /* PAGE LAYOUT */
+
+        .page {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 30px;
+        }
+
+        /* SIDEBAR */
+
+        aside {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            height: fit-content;
+            box-shadow: 0 2px 7px rgba(0,0,0,.08);
+        }
+
+        aside h3 {
+            margin-top: 0;
+            color: #172b4d;
+        }
+
+        aside a {
+            display: block;
+            color: #315b8a;
+            text-decoration: none;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        aside a:hover {
+            text-decoration: underline;
+        }
+
+        /* MAIN CONTENT */
+
+        main {
+            background: white;
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 2px 7px rgba(0,0,0,.08);
+        }
+
+        h2 {
+            color: #172b4d;
+            margin-top: 40px;
+            border-bottom: 2px solid #e2e7ed;
+            padding-bottom: 8px;
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #29476e;
+        }
+
+        /* MODULE INTRO */
+
+        .module-label {
+            color: #315b8a;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: .9rem;
+        }
+
+        .intro {
+            font-size: 1.08rem;
+        }
+
+        /* OBJECTIVES */
+
+        .objectives {
+            background: #eef4fa;
+            border-left: 5px solid #315b8a;
+            padding: 20px 25px;
+            margin: 25px 0;
+        }
+
+        .objectives h3 {
+            margin-top: 0;
+        }
+
+        /* CONCEPT BOX */
+
+        .concept {
+            background: #f7f8fa;
+            border: 1px solid #dde2e7;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        /* INPUT PROCESS OUTPUT */
+
+        .computer-cycle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 30px 0;
+        }
+
+        .cycle-box {
+            background: #172b4d;
+            color: white;
+            padding: 18px 25px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .arrow {
+            font-size: 1.7rem;
+            color: #315b8a;
+        }
+
+        /* COMPONENT CARDS */
+
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .component {
+            border: 1px solid #ddd;
+            border-radius: 7px;
+            padding: 20px;
+        }
+
+        .component h3 {
+            margin-top: 0;
+        }
+
+        /* KNOWLEDGE CHECK */
+
+        .knowledge-check {
+            background: #fff8df;
+            border-left: 5px solid #d8a900;
+            padding: 22px;
+            margin: 30px 0;
+        }
+
+        .knowledge-check h3 {
+            color: #6e5700;
+            margin-top: 0;
+        }
+
+        details {
+            margin-top: 15px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #315b8a;
+        }
+
+        /* ASSIGNMENT */
+
+        .assignment {
+            background: #edf7ef;
+            border-left: 5px solid #39864b;
+            padding: 22px;
+            margin-top: 30px;
+        }
+
+        .assignment h3 {
+            color: #276437;
+            margin-top: 0;
+        }
+
+        /* FOOTER */
+
+        footer {
+            margin-top: 50px;
+            background: #172b4d;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .page {
+                grid-template-columns: 1fr;
+            }
+
+            .component-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-container">
+        <h1>Introduction to Computers</h1>
+        <p>Understanding the technology we use every day</p>
+    </div>
+</header>
+
+<nav>
+    <div class="nav-container">
+        <a href="#">Course Home</a>
+        <a href="#">Modules</a>
+        <a href="#">Assignments</a>
+        <a href="#">Resources</a>
+        <a href="#">About the Instructor</a>
+    </div>
+</nav>
+
+<div class="page">
+
+    <!-- SIDEBAR -->
+
+    <aside>
+
+        <h3>Module 1</h3>
+
+        <a href="#overview">Module Overview</a>
+        <a href="#objectives">Learning Objectives</a>
+        <a href="#lesson1">1.1 What Is a Computer?</a>
+        <a href="#lesson2">1.2 Hardware & Software</a>
+        <a href="#lesson3">1.3 Inside the Computer</a>
+        <a href="#lesson4">1.4 Input & Output</a>
+        <a href="#lesson5">1.5 Types of Computers</a>
+        <a href="#activity">Hands-On Activity</a>
+
+    </aside>
+
+    <!-- MAIN COURSE CONTENT -->
+
+    <main>
+
+        <span class="module-label">Module 1</span>
+
+        <h2 id="overview">Computer Fundamentals</h2>
+
+        <p class="intro">
+            Computers are part of nearly every aspect of modern life. We use
+            them to communicate, complete schoolwork, conduct business,
+            entertain ourselves, and access information.
+        </p>
+
+        <p>
+            Although many people use computers every day, they may not know
+            what is actually happening inside the computer. In this module,
+            you will learn the basic components of a computer and how hardware
+            and software work together.
+        </p>
+
+        <p>
+            You do not need any previous technical experience for this module.
+            The goal is not to memorize complicated terminology. Instead, you
+            will develop a practical understanding of how computers work.
+        </p>
+
+
+        <!-- LEARNING OBJECTIVES -->
+
+        <div class="objectives" id="objectives">
+
+            <h3>Learning Objectives</h3>
+
+            <p>By the end of this module, you should be able to:</p>
+
+            <ul>
+                <li>Define a computer and describe its basic functions.</li>
+
+                <li>Distinguish between hardware and software.</li>
+
+                <li>
+                    Identify the major internal components of a computer
+                    and explain their purposes.
+                </li>
+
+                <li>
+                    Explain the basic roles of the CPU, RAM, storage,
+                    motherboard, and GPU.
+                </li>
+
+                <li>
+                    Distinguish between input, processing, output,
+                    and storage.
+                </li>
+
+                <li>
+                    Compare common types of computers and computing devices.
+                </li>
+
+                <li>
+                    Explain the difference between system software
+                    and application software.
+                </li>
+
+                <li>
+                    Use basic computer specifications to compare computers.
+                </li>
+            </ul>
+
+        </div>
+
+
+        <!-- LESSON 1 -->
+
+        <h2 id="lesson1">Lesson 1.1 — What Is a Computer?</h2>
+
+        <p>
+            At its most basic level, a computer is an electronic device
+            that accepts data, processes that data according to instructions,
+            stores information, and produces output.
+        </p>
+
+        <div class="computer-cycle">
+
+            <div class="cycle-box">Input</div>
+
+            <div class="arrow">→</div>
+
+            <div class="cycle-box">Processing</div>
+
+            <div class="arrow">→</div>
+
+            <div class="cycle-box">Output</div>
+
+            <div class="arrow">→</div>
+
+            <div class="cycle-box">Storage</div>
+
+        </div>
+
+        <h3>Example: Writing a Paper</h3>
+
+        <p>
+            Imagine that you are typing a paper using a word-processing
+            program.
+        </p>
+
+        <ul>
+            <li>
+                <strong>Input:</strong>
+                You press keys on the keyboard.
+            </li>
+
+            <li>
+                <strong>Processing:</strong>
+                The computer processes the keystrokes and determines
+                which characters should appear.
+            </li>
+
+            <li>
+                <strong>Output:</strong>
+                The letters appear on your monitor.
+            </li>
+
+            <li>
+                <strong>Storage:</strong>
+                When you save the document, the file is stored on the
+                computer's storage device.
+            </li>
+        </ul>
+
+        <div class="concept">
+
+            <strong>Important:</strong>
+
+            <p>
+                A computer does not have to be a desktop or laptop.
+                Smartphones, tablets, game consoles, smart televisions,
+                automobiles, servers, and many other devices contain
+                computers.
+            </p>
+
+        </div>
+
+
+        <!-- LESSON 2 -->
+
+        <h2 id="lesson2">Lesson 1.2 — Hardware and Software</h2>
+
+        <p>
+            Every computer system depends on both hardware and software.
+            Understanding the difference between the two is one of the
+            foundations of computer literacy.
+        </p>
+
+        <h3>Hardware</h3>
+
+        <p>
+            <strong>Hardware</strong> refers to the physical components
+            of a computer. These are the parts that you can physically touch.
+        </p>
+
+        <p>Examples include:</p>
+
+        <ul>
+            <li>Keyboard</li>
+            <li>Mouse</li>
+            <li>Monitor</li>
+            <li>CPU</li>
+            <li>RAM</li>
+            <li>SSD</li>
+            <li>Motherboard</li>
+            <li>Graphics card</li>
+        </ul>
+
+        <h3>Software</h3>
+
+        <p>
+            <strong>Software</strong> consists of programs and instructions
+            that tell computer hardware what to do.
+        </p>
+
+        <p>Examples include:</p>
+
+        <ul>
+            <li>Microsoft Windows</li>
+            <li>Microsoft Word</li>
+            <li>Web browsers</li>
+            <li>Games</li>
+            <li>Media players</li>
+        </ul>
+
+        <div class="knowledge-check">
+
+            <h3>Knowledge Check</h3>
+
+            <p>
+                Which of the following is hardware?
+            </p>
+
+            <ol type="A">
+                <li>Microsoft Windows</li>
+                <li>Google Chrome</li>
+                <li>RAM</li>
+                <li>Microsoft Word</li>
+            </ol>
+
+            <details>
+
+                <summary>Show Answer</summary>
+
+                <p>
+                    <strong>C. RAM</strong>
+                </p>
+
+                <p>
+                    RAM is a physical component installed inside a computer.
+                    The other choices are software.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <!-- LESSON 3 -->
+
+        <h2 id="lesson3">Lesson 1.3 — Inside the Computer</h2>
+
+        <p>
+            A computer contains several major components that work together.
+            You do not need to understand the electrical engineering behind
+            these components, but you should understand what each component
+            contributes to the computer.
+        </p>
+
+        <div class="component-grid">
+
+            <div class="component">
+
+                <h3>CPU</h3>
+
+                <p>
+                    The <strong>Central Processing Unit</strong>, or CPU,
+                    executes instructions and performs calculations needed
+                    to run programs.
+                </p>
+
+            </div>
+
+
+            <div class="component">
+
+                <h3>RAM</h3>
+
+                <p>
+                    <strong>Random Access Memory</strong> provides temporary
+                    working space for programs and information currently
+                    being used by the computer.
+                </p>
+
+            </div>
+
+
+            <div class="component">
+
+                <h3>Storage</h3>
+
+                <p>
+                    Storage devices such as solid-state drives (SSDs) and
+                    hard disk drives (HDDs) store programs and files even
+                    after the computer is turned off.
+                </p>
+
+            </div>
+
+
+            <div class="component">
+
+                <h3>Motherboard</h3>
+
+                <p>
+                    The motherboard is the primary circuit board that
+                    connects the major components of the computer and
+                    allows them to communicate.
+                </p>
+
+            </div>
+
+
+            <div class="component">
+
+                <h3>GPU</h3>
+
+                <p>
+                    The <strong>Graphics Processing Unit</strong> processes
+                    graphics and can perform large numbers of calculations
+                    in parallel.
+                </p>
+
+                <p>
+                    GPUs are commonly used for graphics, gaming, video
+                    production, scientific computing, and artificial
+                    intelligence.
+                </p>
+
+            </div>
+
+
+            <div class="component">
+
+                <h3>Power & Cooling</h3>
+
+                <p>
+                    The power supply provides electrical power to computer
+                    components, while fans and heatsinks help remove the
+                    heat those components produce.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- RAM VS STORAGE -->
+
+        <h3>RAM vs. Storage</h3>
+
+        <p>
+            RAM and storage are commonly confused, but they serve very
+            different purposes.
+        </p>
+
+        <div class="concept">
+
+            <h3>Think of a Desk and Filing Cabinet</h3>
+
+            <p>
+                Imagine that <strong>RAM is your desk</strong>. The larger
+                your desk, the more books, papers, and other materials you
+                can have open while you work.
+            </p>
+
+            <p>
+                <strong>Storage is your filing cabinet.</strong> It holds
+                your documents and information when you are not actively
+                using them.
+            </p>
+
+            <p>
+                Therefore, a computer with <strong>16 GB of RAM and a
+                1 TB SSD</strong> has 16 GB of temporary working memory
+                and approximately 1 TB of long-term storage.
+            </p>
+
+        </div>
+
+
+        <!-- LESSON 4 -->
+
+        <h2 id="lesson4">Lesson 1.4 — Input and Output Devices</h2>
+
+        <p>
+            Computers communicate with users through input and output devices.
+        </p>
+
+        <h3>Input Devices</h3>
+
+        <p>
+            Input devices allow information to be sent <strong>to</strong>
+            the computer.
+        </p>
+
+        <ul>
+            <li>Keyboard</li>
+            <li>Mouse</li>
+            <li>Microphone</li>
+            <li>Scanner</li>
+            <li>Webcam</li>
+        </ul>
+
+        <h3>Output Devices</h3>
+
+        <p>
+            Output devices allow the computer to present information
+            <strong>to the user</strong>.
+        </p>
+
+        <ul>
+            <li>Monitor</li>
+            <li>Speakers</li>
+            <li>Printer</li>
+            <li>Projector</li>
+        </ul>
+
+        <div class="knowledge-check">
+
+            <h3>Think About It</h3>
+
+            <p>
+                Is a touchscreen an input device or an output device?
+            </p>
+
+            <details>
+
+                <summary>Show Answer</summary>
+
+                <p>
+                    <strong>It is both.</strong>
+                </p>
+
+                <p>
+                    The screen provides visual output, while touching the
+                    screen provides input to the computer.
+                </p>
+
+            </details>
+
+        </div>
+
+
+        <!-- LESSON 5 -->
+
+        <h2 id="lesson5">Lesson 1.5 — Types of Computers</h2>
+
+        <p>
+            Computers come in many different forms. The appropriate type
+            of computer depends on what it needs to accomplish.
+        </p>
+
+        <ul>
+            <li><strong>Desktop Computer</strong> — designed primarily for use at a desk.</li>
+
+            <li><strong>Laptop</strong> — portable computer with an integrated display, keyboard, and battery.</li>
+
+            <li><strong>Tablet</strong> — portable computer designed primarily around a touchscreen interface.</li>
+
+            <li><strong>Smartphone</strong> — mobile computing device combining communication and computing capabilities.</li>
+
+            <li><strong>Workstation</strong> — high-performance computer often used for specialized professional workloads.</li>
+
+            <li><strong>Server</strong> — computer designed to provide services or resources to other computers.</li>
+
+            <li><strong>Embedded Computer</strong> — computer built into another device to perform a particular function.</li>
+        </ul>
+
+        <div class="concept">
+
+            <h3>What About Virtual Computers?</h3>
+
+            <p>
+                Computers do not always have to correspond to one physical
+                machine. Through a technology called
+                <strong>virtualization</strong>, one physical computer can
+                run multiple virtual computers called
+                <strong>virtual machines</strong>.
+            </p>
+
+            <p>
+                We will explore concepts such as this in greater detail
+                later in the course.
+            </p>
+
+        </div>
+
+
+        <!-- ASSIGNMENT -->
+
+        <h2 id="activity">Hands-On Activity — What's Inside My Computer?</h2>
+
+        <div class="assignment">
+
+            <h3>Your Task</h3>
+
+            <p>
+                Choose a computer that you have access to and identify
+                its basic specifications.
+            </p>
+
+            <p>Record the following:</p>
+
+            <ul>
+                <li>Computer manufacturer and model</li>
+                <li>Operating system</li>
+                <li>Processor / CPU</li>
+                <li>Amount of RAM</li>
+                <li>Storage capacity</li>
+                <li>Storage type, if available</li>
+                <li>Graphics hardware</li>
+            </ul>
+
+            <h3>Reflection Questions</h3>
+
+            <ol>
+                <li>
+                    What surprised you about the specifications of
+                    your computer?
+                </li>
+
+                <li>
+                    If you could upgrade one component, what would you
+                    upgrade and why?
+                </li>
+
+                <li>
+                    Would this computer be appropriate for basic
+                    schoolwork? Explain why or why not.
+                </li>
+
+                <li>
+                    Would this computer be appropriate for more demanding
+                    tasks such as gaming or video editing? Explain your
+                    reasoning.
+                </li>
+            </ol>
+
+        </div>
+
+
+        <!-- END -->
+
+        <h2>Module Summary</h2>
+
+        <p>
+            In this module, you learned that computers accept input,
+            process information, produce output, and store data. You also
+            explored the difference between hardware and software and
+            identified several of the major components found inside a
+            computer.
+        </p>
+
+        <p>
+            These concepts provide the foundation for understanding the
+            technologies we will explore throughout the remainder of
+            Introduction to Computers.
+        </p>
+
+    </main>
+
+</div>
+
+<footer>
+
+    <p><strong>Introduction to Computers</strong></p>
+
+    <p>Course materials created by Domonic Velarde</p>
+
+</footer>
+
+</body>
+</html>
