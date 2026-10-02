@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Module 1: Computer Fundamentals | Introduction to Computers</title>
+    <title>COMP 1001 | Introduction to Computers</title>
 
     <style>
         * {
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -43,13 +47,24 @@
             color: #dce5f2;
         }
 
+        .course-number {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #b9cae0;
+            margin-bottom: 5px;
+        }
+
         /* NAVIGATION */
 
         nav {
             background: #0d1f38;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        nav .nav-container {
+        .nav-container {
             max-width: 1100px;
             margin: auto;
             display: flex;
@@ -74,7 +89,7 @@
             margin: 30px auto;
             padding: 0 20px;
             display: grid;
-            grid-template-columns: 240px 1fr;
+            grid-template-columns: 250px 1fr;
             gap: 30px;
         }
 
@@ -86,6 +101,8 @@
             border-radius: 8px;
             height: fit-content;
             box-shadow: 0 2px 7px rgba(0,0,0,.08);
+            position: sticky;
+            top: 75px;
         }
 
         aside h3 {
@@ -99,13 +116,14 @@
             text-decoration: none;
             padding: 8px 0;
             border-bottom: 1px solid #eee;
+            font-size: 0.95rem;
         }
 
         aside a:hover {
             text-decoration: underline;
         }
 
-        /* MAIN CONTENT */
+        /* MAIN */
 
         main {
             background: white;
@@ -116,20 +134,19 @@
 
         h2 {
             color: #172b4d;
-            margin-top: 40px;
+            margin-top: 45px;
             border-bottom: 2px solid #e2e7ed;
             padding-bottom: 8px;
         }
 
-        h2:first-child {
+        h2:first-of-type {
             margin-top: 0;
         }
 
         h3 {
             color: #29476e;
+            margin-top: 30px;
         }
-
-        /* MODULE INTRO */
 
         .module-label {
             color: #315b8a;
@@ -163,10 +180,67 @@
             border: 1px solid #dde2e7;
             border-radius: 6px;
             padding: 20px;
-            margin: 20px 0;
+            margin: 25px 0;
         }
 
-        /* INPUT PROCESS OUTPUT */
+        .concept h3 {
+            margin-top: 0;
+        }
+
+        /* HISTORY */
+
+        .history-highlight {
+            background: #f3f6f9;
+            border-left: 5px solid #172b4d;
+            padding: 20px 25px;
+            margin: 25px 0;
+        }
+
+        .history-highlight h3 {
+            margin-top: 0;
+        }
+
+        .did-you-know {
+            background: #eef4fa;
+            border: 1px solid #cbd9e7;
+            border-radius: 7px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .did-you-know h3 {
+            margin-top: 0;
+            color: #172b4d;
+        }
+
+        /* IMAGES */
+
+        .course-image {
+            margin: 30px auto;
+            text-align: center;
+            max-width: 850px;
+        }
+
+        .course-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 7px;
+            border: 1px solid #d8dde3;
+            display: block;
+        }
+
+        .course-image figcaption {
+            margin-top: 8px;
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .image-small {
+            max-width: 650px;
+        }
+
+        /* COMPUTER CYCLE */
 
         .computer-cycle {
             display: flex;
@@ -198,13 +272,14 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 18px;
-            margin-top: 20px;
+            margin: 25px 0;
         }
 
         .component {
             border: 1px solid #ddd;
             border-radius: 7px;
             padding: 20px;
+            background: #fff;
         }
 
         .component h3 {
@@ -249,6 +324,29 @@
             margin-top: 0;
         }
 
+        /* TABLE */
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+
+        th, td {
+            border: 1px solid #d8dde3;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #172b4d;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background: #f7f8fa;
+        }
+
         /* FOOTER */
 
         footer {
@@ -271,12 +369,28 @@
                 grid-template-columns: 1fr;
             }
 
+            aside {
+                position: static;
+            }
+
             .component-grid {
                 grid-template-columns: 1fr;
             }
 
             header h1 {
                 font-size: 1.8rem;
+            }
+
+            nav {
+                position: static;
+            }
+
+            .computer-cycle {
+                flex-direction: column;
+            }
+
+            .arrow {
+                transform: rotate(90deg);
             }
         }
     </style>
@@ -286,10 +400,18 @@
 
 <header>
     <div class="header-container">
+
+        <div class="course-number">COMP 1001</div>
+
         <h1>Introduction to Computers</h1>
-        <p>Understanding the technology we use every day</p>
+
+        <p>
+            Computer Fundamentals, Digital Literacy, and Modern Computing
+        </p>
+
     </div>
 </header>
+
 
 <nav>
     <div class="nav-container">
@@ -301,580 +423,1360 @@
     </div>
 </nav>
 
+
 <div class="page">
 
-    <!-- SIDEBAR -->
+<!-- SIDEBAR -->
 
-    <aside>
+<aside>
 
-        <h3>Module 1</h3>
+    <h3>Module 1</h3>
 
-        <a href="#overview">Module Overview</a>
-        <a href="#objectives">Learning Objectives</a>
-        <a href="#lesson1">1.1 What Is a Computer?</a>
-        <a href="#lesson2">1.2 Hardware & Software</a>
-        <a href="#lesson3">1.3 Inside the Computer</a>
-        <a href="#lesson4">1.4 Input & Output</a>
-        <a href="#lesson5">1.5 Types of Computers</a>
-        <a href="#activity">Hands-On Activity</a>
+    <a href="#overview">Module Overview</a>
+    <a href="#objectives">Learning Objectives</a>
+    <a href="#history">A Brief History</a>
+    <a href="#everywhere">Computers Are Everywhere</a>
+    <a href="#lesson1">1.1 What Is a Computer?</a>
+    <a href="#lesson2">1.2 Hardware & Software</a>
+    <a href="#lesson3">1.3 Inside the Computer</a>
+    <a href="#lesson4">1.4 Input & Output</a>
+    <a href="#lesson5">1.5 Types of Computers</a>
+    <a href="#software">Operating Systems & Applications</a>
+    <a href="#activity">Hands-On Activity</a>
+    <a href="#summary">Module Summary</a>
 
-    </aside>
+</aside>
 
-    <!-- MAIN COURSE CONTENT -->
 
-    <main>
+<!-- MAIN CONTENT -->
 
-        <span class="module-label">Module 1</span>
+<main>
 
-        <h2 id="overview">Computer Fundamentals</h2>
+<span class="module-label">Module 1</span>
 
-        <p class="intro">
-            Computers are part of nearly every aspect of modern life. We use
-            them to communicate, complete schoolwork, conduct business,
-            entertain ourselves, and access information.
-        </p>
+<h2 id="overview">Computer Fundamentals</h2>
 
-        <p>
-            Although many people use computers every day, they may not know
-            what is actually happening inside the computer. In this module,
-            you will learn the basic components of a computer and how hardware
-            and software work together.
-        </p>
+<p class="intro">
+    Computers are part of nearly every aspect of modern life.
+    We use them to communicate, complete schoolwork, conduct
+    business, access information, entertain ourselves, and perform
+    countless other tasks.
+</p>
 
-        <p>
-            You do not need any previous technical experience for this module.
-            The goal is not to memorize complicated terminology. Instead, you
-            will develop a practical understanding of how computers work.
-        </p>
+<p>
+    Although many people use computers every day, they may not know
+    what is actually happening inside the computer. In this module,
+    you will learn about the basic components of a computer and how
+    hardware and software work together.
+</p>
 
+<p>
+    You do not need any previous technical experience for this module.
+    The goal is not simply to memorize terminology. Instead, you will
+    develop a practical understanding of how computers work and how
+    the concepts discussed in this module relate to the technology
+    you use every day.
+</p>
 
-        <!-- LEARNING OBJECTIVES -->
 
-        <div class="objectives" id="objectives">
+<!-- LEARNING OBJECTIVES -->
 
-            <h3>Learning Objectives</h3>
+<div class="objectives" id="objectives">
 
-            <p>By the end of this module, you should be able to:</p>
+    <h3>Learning Objectives</h3>
 
-            <ul>
-                <li>Define a computer and describe its basic functions.</li>
+    <p>By the end of this module, you should be able to:</p>
 
-                <li>Distinguish between hardware and software.</li>
+    <ul>
+        <li>Define a computer and describe its basic functions.</li>
 
-                <li>
-                    Identify the major internal components of a computer
-                    and explain their purposes.
-                </li>
+        <li>
+            Describe the historical significance of ENIAC in the
+            development of modern computing.
+        </li>
 
-                <li>
-                    Explain the basic roles of the CPU, RAM, storage,
-                    motherboard, and GPU.
-                </li>
+        <li>Distinguish between hardware and software.</li>
 
-                <li>
-                    Distinguish between input, processing, output,
-                    and storage.
-                </li>
+        <li>
+            Identify the major internal components of a computer
+            and explain their purposes.
+        </li>
 
-                <li>
-                    Compare common types of computers and computing devices.
-                </li>
+        <li>
+            Explain the basic roles of the CPU, RAM, storage,
+            motherboard, GPU, and power supply.
+        </li>
 
-                <li>
-                    Explain the difference between system software
-                    and application software.
-                </li>
+        <li>
+            Distinguish between input, processing, output, and storage.
+        </li>
 
-                <li>
-                    Use basic computer specifications to compare computers.
-                </li>
-            </ul>
+        <li>
+            Compare common types of computers and computing devices.
+        </li>
 
-        </div>
+        <li>
+            Explain the difference between an operating system and
+            application software.
+        </li>
 
-
-        <!-- LESSON 1 -->
-
-        <h2 id="lesson1">Lesson 1.1 — What Is a Computer?</h2>
-
-        <p>
-            At its most basic level, a computer is an electronic device
-            that accepts data, processes that data according to instructions,
-            stores information, and produces output.
-        </p>
-
-        <div class="computer-cycle">
-
-            <div class="cycle-box">Input</div>
-
-            <div class="arrow">→</div>
-
-            <div class="cycle-box">Processing</div>
-
-            <div class="arrow">→</div>
-
-            <div class="cycle-box">Output</div>
-
-            <div class="arrow">→</div>
-
-            <div class="cycle-box">Storage</div>
-
-        </div>
-
-        <h3>Example: Writing a Paper</h3>
-
-        <p>
-            Imagine that you are typing a paper using a word-processing
-            program.
-        </p>
-
-        <ul>
-            <li>
-                <strong>Input:</strong>
-                You press keys on the keyboard.
-            </li>
-
-            <li>
-                <strong>Processing:</strong>
-                The computer processes the keystrokes and determines
-                which characters should appear.
-            </li>
-
-            <li>
-                <strong>Output:</strong>
-                The letters appear on your monitor.
-            </li>
-
-            <li>
-                <strong>Storage:</strong>
-                When you save the document, the file is stored on the
-                computer's storage device.
-            </li>
-        </ul>
-
-        <div class="concept">
-
-            <strong>Important:</strong>
-
-            <p>
-                A computer does not have to be a desktop or laptop.
-                Smartphones, tablets, game consoles, smart televisions,
-                automobiles, servers, and many other devices contain
-                computers. In fact it is accurate to say that the vast 
-                majority of computers in existence are embedded devices.
-                Some examples of embedded device would be your phone, 
-                smart watch, Roku streaming device, smart refrigiatros
-                and other smart devices you use each day.
-            </p>
-
-        </div>
-
-
-        <!-- LESSON 2 -->
-
-        <h2 id="lesson2">Lesson 1.2 — Hardware and Software</h2>
-
-        <p>
-            Every computer system depends on both hardware and software.
-            Understanding the difference between the two is one of the
-            foundations of computer literacy.
-        </p>
-
-        <h3>Hardware</h3>
-
-        <p>
-            <strong>Hardware</strong> refers to the physical components
-            of a computer. These are the parts that you can physically touch.
-        </p>
-
-        <p>Examples include:</p>
-
-        <ul>
-            <li>Keyboard</li>
-            <li>Mouse</li>
-            <li>Monitor</li>
-            <li>CPU</li>
-            <li>RAM</li>
-            <li>SSD</li>
-            <li>Motherboard</li>
-            <li>Graphics card</li>
-        </ul>
-
-        <h3>Software</h3>
-
-        <p>
-            <strong>Software</strong> consists of programs and instructions
-            that tell computer hardware what to do.
-        </p>
-
-        <p>Examples include:</p>
-
-        <ul>
-            <li>Microsoft Windows</li>
-            <li>Microsoft Word</li>
-            <li>Web browsers</li>
-            <li>Games</li>
-            <li>Media players</li>
-        </ul>
-
-        <div class="knowledge-check">
-
-            <h3>Knowledge Check</h3>
-
-            <p>
-                Which of the following is hardware?
-            </p>
-
-            <ol type="A">
-                <li>Microsoft Windows</li>
-                <li>Google Chrome</li>
-                <li>RAM</li>
-                <li>Microsoft Word</li>
-            </ol>
-
-            <details>
-
-                <summary>Show Answer</summary>
-
-                <p>
-                    <strong>C. RAM</strong>
-                </p>
-
-                <p>
-                    RAM is a physical component installed inside a computer.
-                    The other choices are software.
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <!-- LESSON 3 -->
-
-        <h2 id="lesson3">Lesson 1.3 — Inside the Computer</h2>
-
-        <p>
-            A computer contains several major components that work together.
-            You do not need to understand the electrical engineering behind
-            these components, but you should understand what each component
-            contributes to the computer.
-        </p>
-
-        <div class="component-grid">
-
-            <div class="component">
-
-                <h3>CPU</h3>
-
-                <p>
-                    The <strong>Central Processing Unit</strong>, or CPU,
-                    executes instructions and performs calculations needed
-                    to run programs.
-                </p>
-
-            </div>
-
-
-            <div class="component">
-
-                <h3>RAM</h3>
-
-                <p>
-                    <strong>Random Access Memory</strong> provides temporary
-                    working space for programs and information currently
-                    being used by the computer. This type of memeory is refered
-                    to as volitile memory since once you shutoff the computer 
-                    whatever was in the memory disappears. 
-                </p>
-
-            </div>
-
-
-            <div class="component">
-
-                <h3>Storage</h3>
-
-                <p>
-                    Storage devices such as solid-state drives (SSDs) and
-                    hard disk drives (HDDs) store programs and files even
-                    after the computer is turned off.
-                </p>
-
-            </div>
-
-
-            <div class="component">
-
-                <h3>Motherboard</h3>
-
-                <p>
-                    The motherboard is the primary circuit board that
-                    connects the major components of the computer and
-                    allows them to communicate.
-                </p>
-
-            </div>
-
-
-            <div class="component">
-
-                <h3>GPU</h3>
-
-                <p>
-                    The <strong>Graphics Processing Unit</strong> processes
-                    graphics and can perform large numbers of calculations
-                    in parallel.
-                </p>
-
-                <p>
-                    GPUs are commonly used for graphics, gaming, video
-                    production, scientific computing, and artificial
-                    intelligence.
-                </p>
-
-            </div>
-
-
-            <div class="component">
-
-                <h3>Power & Cooling</h3>
-
-                <p>
-                    The power supply provides electrical power to computer
-                    components, while fans and heatsinks help remove the
-                    heat those components produce.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- RAM VS STORAGE -->
-
-        <h3>RAM vs. Storage</h3>
-
-        <p>
-            RAM and storage are commonly confused, but they serve very
-            different purposes.
-        </p>
-
-        <div class="concept">
-
-            <h3>Think of a Desk and Filing Cabinet</h3>
-
-            <p>
-                Imagine that <strong>RAM is your desk</strong>. The larger
-                your desk, the more books, papers, and other materials you
-                can have open while you work.
-            </p>
-
-            <p>
-                <strong>Storage is your filing cabinet.</strong> It holds
-                your documents and information when you are not actively
-                using them.
-            </p>
-
-            <p>
-                Therefore, a computer with <strong>16 GB of RAM and a
-                1 TB SSD</strong> has 16 GB of temporary working memory
-                and approximately 1 TB of long-term storage.
-            </p>
-
-        </div>
-
-
-        <!-- LESSON 4 -->
-
-        <h2 id="lesson4">Lesson 1.4 — Input and Output Devices</h2>
-
-        <p>
-            Computers communicate with users through input and output devices.
-        </p>
-
-        <h3>Input Devices</h3>
-
-        <p>
-            Input devices allow information to be sent <strong>to</strong>
-            the computer.
-        </p>
-
-        <ul>
-            <li>Keyboard</li>
-            <li>Mouse</li>
-            <li>Microphone</li>
-            <li>Scanner</li>
-            <li>Webcam</li>
-        </ul>
-
-        <h3>Output Devices</h3>
-
-        <p>
-            Output devices allow the computer to present information
-            <strong>to the user</strong>.
-        </p>
-
-        <ul>
-            <li>Monitor</li>
-            <li>Speakers</li>
-            <li>Printer</li>
-            <li>Projector</li>
-        </ul>
-
-        <div class="knowledge-check">
-
-            <h3>Think About It</h3>
-
-            <p>
-                Is a touchscreen an input device or an output device?
-            </p>
-
-            <details>
-
-                <summary>Show Answer</summary>
-
-                <p>
-                    <strong>It is both.</strong>
-                </p>
-
-                <p>
-                    The screen provides visual output, while touching the
-                    screen provides input to the computer.
-                </p>
-
-            </details>
-
-        </div>
-
-
-        <!-- LESSON 5 -->
-
-        <h2 id="lesson5">Lesson 1.5 — Types of Computers</h2>
-
-        <p>
-            Computers come in many different forms. The appropriate type
-            of computer depends on what it needs to accomplish.
-        </p>
-
-        <ul>
-            <li><strong>Desktop Computer</strong> — designed primarily for use at a desk.</li>
-
-            <li><strong>Laptop</strong> — portable computer with an integrated display, keyboard, and battery.</li>
-
-            <li><strong>Tablet</strong> — portable computer designed primarily around a touchscreen interface.</li>
-
-            <li><strong>Smartphone</strong> — mobile computing device combining communication and computing capabilities.</li>
-
-            <li><strong>Workstation</strong> — high-performance computer often used for specialized professional workloads.</li>
-
-            <li><strong>Server</strong> — computer designed to provide services or resources to other computers.</li>
-
-            <li><strong>Embedded Computer</strong> — computer built into another device to perform a particular function.</li>
-        </ul>
-
-        <div class="concept">
-
-            <h3>What About Virtual Computers?</h3>
-
-            <p>
-                Computers do not always have to correspond to one physical
-                machine. Through a technology called
-                <strong>virtualization</strong>, one physical computer can
-                run multiple virtual computers called
-                <strong>virtual machines</strong>.
-            </p>
-
-            <p>
-                We will explore concepts such as this in greater detail
-                later in the course.
-            </p>
-
-        </div>
-
-
-        <!-- ASSIGNMENT -->
-
-        <h2 id="activity">Hands-On Activity — What's Inside My Computer?</h2>
-
-        <div class="assignment">
-
-            <h3>Your Task</h3>
-
-            <p>
-                Choose a computer that you have access to and identify
-                its basic specifications.
-            </p>
-
-            <p>Record the following:</p>
-
-            <ul>
-                <li>Computer manufacturer and model</li>
-                <li>Operating system</li>
-                <li>Processor / CPU</li>
-                <li>Amount of RAM</li>
-                <li>Storage capacity</li>
-                <li>Storage type, if available</li>
-                <li>Graphics hardware</li>
-            </ul>
-
-            <h3>Reflection Questions</h3>
-
-            <ol>
-                <li>
-                    What surprised you about the specifications of
-                    your computer?
-                </li>
-
-                <li>
-                    If you could upgrade one component, what would you
-                    upgrade and why?
-                </li>
-
-                <li>
-                    Would this computer be appropriate for basic
-                    schoolwork? Explain why or why not.
-                </li>
-
-                <li>
-                    Would this computer be appropriate for more demanding
-                    tasks such as gaming or video editing? Explain your
-                    reasoning.
-                </li>
-            </ol>
-
-        </div>
-
-
-        <!-- END -->
-
-        <h2>Module Summary</h2>
-
-        <p>
-            In this module, you learned that computers accept input,
-            process information, produce output, and store data. You also
-            explored the difference between hardware and software and
-            identified several of the major components found inside a
-            computer.
-        </p>
-
-        <p>
-            These concepts provide the foundation for understanding the
-            technologies we will explore throughout the remainder of
-            Introduction to Computers.
-        </p>
-
-    </main>
+        <li>
+            Use basic computer specifications to describe and compare
+            computers.
+        </li>
+    </ul>
 
 </div>
 
+
+<!-- HISTORY -->
+
+<h2 id="history">A Brief History of the Modern Computer</h2>
+
+<p>
+    When we think about computers today, we might picture a laptop
+    sitting on a desk, a powerful gaming PC, or even the smartphone
+    in our pocket. Computers, however, have changed dramatically
+    since the beginning of the modern computing era.
+</p>
+
+<h3>ENIAC</h3>
+
+<p>
+    One of the most important early computers was the
+    <strong>ENIAC (Electronic Numerical Integrator and Computer)</strong>.
+    ENIAC is widely recognized as the first general-purpose
+    electronic digital computer.
+</p>
+
+<p>
+    ENIAC was developed by <strong>John W. Mauchly</strong> and
+    <strong>J. Presper Eckert</strong> at the University of
+    Pennsylvania's Moore School of Electrical Engineering.
+</p>
+
+<p>
+    It was developed for the United States Army to help perform the
+    enormous number of calculations required for artillery firing
+    tables and ballistic trajectories.
+</p>
+
+
+<figure class="course-image">
+
+    <img
+        src="images/eniac.jpg"
+        alt="ENIAC electronic computer with operators"
+    >
+
+    <figcaption>
+        Figure 1. ENIAC. U.S. Army photograph.
+        Public domain. Source: Wikimedia Commons.
+    </figcaption>
+
+</figure>
+
+
+<div class="history-highlight">
+
+    <h3>How Big Was ENIAC?</h3>
+
+    <p>
+        Compared with the computers we use today, ENIAC was enormous.
+    </p>
+
+    <ul>
+        <li>
+            It weighed approximately <strong>30 tons</strong>.
+        </li>
+
+        <li>
+            It occupied approximately
+            <strong>1,800 square feet</strong>.
+        </li>
+
+        <li>
+            It contained more than
+            <strong>17,000 vacuum tubes</strong>.
+        </li>
+
+        <li>
+            It contained thousands of additional electronic
+            components.
+        </li>
+
+        <li>
+            Its construction required millions of hand-soldered
+            connections.
+        </li>
+    </ul>
+
+</div>
+
+
+<figure class="course-image">
+
+    <img
+        src="images/eniac-1946.jpg"
+        alt="Historic photograph of the ENIAC computer"
+    >
+
+    <figcaption>
+        Figure 2. Historic ENIAC photograph.
+        U.S. Army photograph. Public domain.
+        Source: Wikimedia Commons.
+    </figcaption>
+
+</figure>
+
+
+<p>
+    Despite its enormous size, ENIAC had only a fraction of the
+    computing capabilities available in the devices we use today.
+</p>
+
+<p>
+    Improvements in electronic components eventually allowed
+    computers to become dramatically smaller, faster, less
+    expensive, and more accessible.
+</p>
+
+
+<div class="did-you-know">
+
+    <h3>Did You Know?</h3>
+
+    <p>
+        Some of ENIAC's earliest programmers were women.
+        The original programming team included
+        <strong>Jean Bartik, Betty Holberton, Kathleen Antonelli,
+        Marlyn Meltzer, Frances Spence, and Ruth Teitelbaum</strong>.
+    </p>
+
+    <p>
+        Their work helped develop early programming techniques at
+        a time when programming a computer was very different from
+        writing the software we use today.
+    </p>
+
+</div>
+
+
+<!-- COMPUTERS EVERYWHERE -->
+
+<h2 id="everywhere">Computers Are Everywhere</h2>
+
+<p>
+    A computer no longer needs to weigh 30 tons or occupy an entire
+    room. Modern computers come in an enormous variety of sizes,
+    shapes, and designs.
+</p>
+
+<p>
+    Some computers are easy to recognize. You may have a laptop or
+    desktop computer at home, use a gaming computer, or play games
+    on an Xbox or PlayStation console.
+</p>
+
+<p>
+    Other computers are less obvious.
+</p>
+
+<p>
+    Computers can be found inside smartphones, smart televisions,
+    Roku, Amazon Fire TV and Apple TV streaming devices, robotic
+    vacuum cleaners such as a Roomba, automobiles, appliances,
+    security systems, and countless other electronic devices.
+</p>
+
+
+<div class="concept">
+
+    <h3>Think About It</h3>
+
+    <p>
+        A modern streaming device may fit in the palm of your hand,
+        while ENIAC occupied approximately 1,800 square feet.
+    </p>
+
+    <p>
+        Despite their enormous differences in size and capability,
+        computers still depend on many of the same fundamental
+        concepts:
+        <strong>processing, memory, storage, input, output,
+        hardware, and software.</strong>
+    </p>
+
+</div>
+
+
+<!-- LESSON 1.1 -->
+
+<h2 id="lesson1">Lesson 1.1 — What Is a Computer?</h2>
+
+<p>
+    At its most basic level, a computer is an electronic device
+    that accepts data, processes that data according to instructions,
+    stores information, and produces output.
+</p>
+
+
+<div class="computer-cycle">
+
+    <div class="cycle-box">Input</div>
+
+    <div class="arrow">→</div>
+
+    <div class="cycle-box">Processing</div>
+
+    <div class="arrow">→</div>
+
+    <div class="cycle-box">Output</div>
+
+    <div class="arrow">→</div>
+
+    <div class="cycle-box">Storage</div>
+
+</div>
+
+
+<h3>Example: Writing a Paper</h3>
+
+<p>
+    Imagine that you are typing a paper using a word-processing
+    program.
+</p>
+
+<ul>
+    <li>
+        <strong>Input:</strong>
+        You press keys on the keyboard.
+    </li>
+
+    <li>
+        <strong>Processing:</strong>
+        The computer interprets those keystrokes.
+    </li>
+
+    <li>
+        <strong>Output:</strong>
+        The letters appear on your monitor.
+    </li>
+
+    <li>
+        <strong>Storage:</strong>
+        When you save the document, the file is written to a
+        storage device.
+    </li>
+</ul>
+
+
+<div class="knowledge-check">
+
+    <h3>Knowledge Check</h3>
+
+    <p>
+        When you move your mouse and the pointer moves across the
+        monitor, which device is providing input?
+    </p>
+
+    <details>
+
+        <summary>Show Answer</summary>
+
+        <p>
+            <strong>The mouse.</strong>
+        </p>
+
+        <p>
+            The mouse sends information into the computer.
+            The monitor then displays the resulting output.
+        </p>
+
+    </details>
+
+</div>
+
+
+<!-- LESSON 1.2 -->
+
+<h2 id="lesson2">Lesson 1.2 — Hardware and Software</h2>
+
+<p>
+    Every modern computer system depends on both
+    <strong>hardware</strong> and <strong>software</strong>.
+    Understanding the difference between the two is one of the
+    foundations of computer literacy.
+</p>
+
+
+<h3>Hardware</h3>
+
+<p>
+    <strong>Hardware</strong> refers to the physical components
+    of a computer. These are the parts that physically exist and
+    can be touched.
+</p>
+
+<p>Examples include:</p>
+
+<ul>
+    <li>Keyboard</li>
+    <li>Mouse</li>
+    <li>Monitor</li>
+    <li>CPU</li>
+    <li>RAM</li>
+    <li>SSD</li>
+    <li>Motherboard</li>
+    <li>Graphics card</li>
+</ul>
+
+
+<h3>Software</h3>
+
+<p>
+    <strong>Software</strong> consists of programs and instructions
+    that tell computer hardware what to do.
+</p>
+
+<p>Examples include:</p>
+
+<ul>
+    <li>Microsoft Windows</li>
+    <li>Microsoft Word</li>
+    <li>Google Chrome</li>
+    <li>Mozilla Firefox</li>
+    <li>Games</li>
+    <li>Media players</li>
+</ul>
+
+
+<div class="knowledge-check">
+
+    <h3>Knowledge Check</h3>
+
+    <p>Which of the following is hardware?</p>
+
+    <ol type="A">
+        <li>Microsoft Windows</li>
+        <li>Google Chrome</li>
+        <li>RAM</li>
+        <li>Microsoft Word</li>
+    </ol>
+
+    <details>
+
+        <summary>Show Answer</summary>
+
+        <p><strong>C. RAM</strong></p>
+
+        <p>
+            RAM is a physical component installed inside a computer.
+            The other choices are software.
+        </p>
+
+    </details>
+
+</div>
+
+
+<!-- LESSON 1.3 -->
+
+<h2 id="lesson3">Lesson 1.3 — Inside the Computer</h2>
+
+<p>
+    Although computers can look very different from one another,
+    modern computer systems share many common components.
+</p>
+
+<p>
+    Understanding what these components do will help you understand
+    computer specifications, troubleshoot basic computer problems,
+    and make informed decisions when purchasing or upgrading a
+    computer.
+</p>
+
+
+<figure class="course-image">
+
+    <img
+        src="images/computer-motherboard-components.jpg"
+        alt="Computer motherboard showing internal computer components"
+    >
+
+    <figcaption>
+        Figure 3. Computer motherboard and components.
+        CC0 / Public Domain. Source: Wikimedia Commons.
+    </figcaption>
+
+</figure>
+
+
+<!-- CPU -->
+
+<h3>Processor — Central Processing Unit (CPU)</h3>
+
+<p>
+    The <strong>Central Processing Unit (CPU)</strong>, commonly
+    called the processor, executes instructions and performs many
+    of the calculations required for a computer to operate.
+</p>
+
+<p>
+    CPUs are found in everything from desktop computers and servers
+    to smartphones and embedded devices.
+</p>
+
+<p>
+    Several companies and processor families have played important
+    roles in modern computing.
+</p>
+
+<ul>
+    <li>
+        <strong>AMD (Advanced Micro Devices)</strong> —
+        produces processor families such as AMD Ryzen.
+    </li>
+
+    <li>
+        <strong>Intel</strong> —
+        has produced many generations of processors, including
+        Pentium, Intel Core, and newer Intel Core Ultra processors.
+    </li>
+
+    <li>
+        <strong>Apple</strong> —
+        has developed A-series processors for mobile devices and
+        M-series processors for Mac computers and other devices.
+    </li>
+
+    <li>
+        <strong>Raspberry Pi</strong> —
+        uses ARM-based systems-on-a-chip. For example, the
+        Raspberry Pi 4 uses a Broadcom BCM2711 containing a
+        quad-core 64-bit ARM Cortex-A72 CPU.
+    </li>
+</ul>
+
+
+<figure class="course-image image-small">
+
+    <img
+        src="images/cpu-and-fan.jpg"
+        alt="Modern computer motherboard with CPU and cooling fan"
+    >
+
+    <figcaption>
+        Figure 4. Modern computer motherboard with CPU and cooling
+        fan. Public domain. Source: Wikimedia Commons.
+    </figcaption>
+
+</figure>
+
+
+<!-- EMBEDDED -->
+
+<h3>Embedded Computers</h3>
+
+<p>
+    Not every computer looks like a traditional desktop or laptop.
+    An <strong>embedded computer</strong> is a computer incorporated
+    into another device to perform one or more specific functions.
+</p>
+
+<p>Embedded computers can be found in devices such as:</p>
+
+<ul>
+    <li>Smartphones</li>
+    <li>Smart televisions</li>
+    <li>Streaming devices</li>
+    <li>Robotic vacuum cleaners</li>
+    <li>Automobiles</li>
+    <li>Home appliances</li>
+    <li>Security cameras</li>
+    <li>Internet of Things (IoT) devices</li>
+</ul>
+
+<p>
+    You may interact with embedded computers every day without
+    thinking of them as computers.
+</p>
+
+
+<!-- MOTHERBOARD -->
+
+<h3>Motherboard</h3>
+
+<p>
+    The <strong>motherboard</strong> is the primary circuit board
+    inside a computer.
+</p>
+
+<p>
+    It provides connections that allow the CPU, memory, storage
+    devices, graphics hardware, and other components to communicate.
+</p>
+
+<p>
+    You can think of the motherboard as the central platform that
+    brings the computer's major hardware components together.
+</p>
+
+
+<figure class="course-image">
+
+    <img
+        src="images/pc-motherboard.jpg"
+        alt="PC motherboard showing sockets, slots, and connectors"
+    >
+
+    <figcaption>
+        Figure 5. PC motherboard.
+        CC0 / Public Domain. Source: Wikimedia Commons.
+    </figcaption>
+
+</figure>
+
+
+<!-- RAM -->
+
+<h3>Memory — Random Access Memory (RAM)</h3>
+
+<p>
+    <strong>Random Access Memory (RAM)</strong> is temporary working
+    memory used by the computer while programs are running.
+</p>
+
+<p>
+    When you open a web browser, edit a document, play a game,
+    or run another application, information the computer currently
+    needs can be placed into RAM so that it can be accessed quickly.
+</p>
+
+<p>
+    RAM is generally <strong>volatile</strong>, meaning that the
+    information stored in RAM is lost when the computer loses power.
+</p>
+
+
+<!-- STORAGE -->
+
+<h3>Storage</h3>
+
+<p>
+    Storage allows a computer to retain the operating system,
+    applications, documents, photographs, videos, and other
+    information even after the computer is turned off.
+</p>
+
+<p>Common storage technologies include:</p>
+
+<ul>
+    <li><strong>HDD</strong> — Hard Disk Drive</li>
+    <li><strong>SSD</strong> — Solid-State Drive</li>
+    <li>
+        <strong>NVMe SSD</strong> —
+        high-speed solid-state storage using the NVMe protocol
+    </li>
+    <li>
+        <strong>USB flash drive</strong> —
+        portable storage that connects through USB
+    </li>
+</ul>
+
+
+<div class="concept">
+
+    <h3>RAM vs. Storage — Think of a Desk and Filing Cabinet</h3>
+
+    <p>
+        Imagine that <strong>RAM is your desk</strong>.
+        The larger your desk, the more books, papers, and other
+        materials you can have open while you work.
+    </p>
+
+    <p>
+        <strong>Storage is your filing cabinet.</strong>
+        It holds information that you want to keep even when you
+        are no longer actively working with it.
+    </p>
+
+    <p>
+        Therefore, a computer advertised with
+        <strong>16 GB of RAM and a 1 TB SSD</strong>
+        has 16 GB of working memory and approximately 1 TB of
+        long-term storage.
+    </p>
+
+</div>
+
+
+<!-- GPU -->
+
+<h3>GPU — Graphics Processing Unit</h3>
+
+<p>
+    The <strong>Graphics Processing Unit (GPU)</strong> processes
+    graphics and is designed to perform many calculations in
+    parallel.
+</p>
+
+<p>GPUs are commonly used for:</p>
+
+<ul>
+    <li>Displaying computer graphics</li>
+    <li>Gaming</li>
+    <li>Video editing</li>
+    <li>3D rendering</li>
+    <li>Scientific computing</li>
+    <li>Artificial intelligence and machine learning</li>
+</ul>
+
+<p>
+    Some computers have graphics capabilities integrated into the
+    processor, while others use a separate or
+    <strong>discrete GPU</strong>.
+</p>
+
+
+<!-- PSU -->
+
+<h3>PSU — Power Supply Unit</h3>
+
+<p>
+    The <strong>Power Supply Unit (PSU)</strong> supplies electrical
+    power to the components inside many desktop computers.
+</p>
+
+<p>
+    Different computing devices handle power differently.
+    Desktop computers commonly contain an internal PSU, while
+    laptops and smaller devices may use external power adapters
+    and integrated power-management hardware.
+</p>
+
+
+<!-- CASE -->
+
+<h3>Computer Case</h3>
+
+<p>
+    The <strong>computer case</strong> physically houses and protects
+    many of the internal components of a desktop computer.
+</p>
+
+<p>
+    Cases come in many different sizes and designs. Other types of
+    computers, including laptops, tablets, smartphones, and embedded
+    computers, package their components into much smaller enclosures.
+</p>
+
+
+<!-- IMAGE KNOWLEDGE CHECK -->
+
+<div class="knowledge-check">
+
+    <h3>Knowledge Check — Identify the Hardware</h3>
+
+    <p>
+        Examine the computer hardware pictured below.
+        Based on what you have learned so far, what components,
+        slots, or connections can you identify?
+    </p>
+
+    <figure class="course-image">
+
+        <img
+            src="images/computer-motherboard-components.jpg"
+            alt="Computer motherboard used for hardware identification"
+        >
+
+    </figure>
+
+    <p>
+        Do not worry if you cannot identify everything.
+        The goal is to begin recognizing the major components
+        found inside a computer.
+    </p>
+
+</div>
+
+
+<!-- LESSON 1.4 -->
+
+<h2 id="lesson4">Lesson 1.4 — Input and Output Devices</h2>
+
+<p>
+    Computers need ways to receive information and ways to provide
+    information back to users. These are known as
+    <strong>input</strong> and <strong>output</strong> devices.
+</p>
+
+
+<h3>Input Devices</h3>
+
+<p>
+    An input device sends information <strong>into</strong>
+    a computer.
+</p>
+
+<ul>
+    <li>Keyboard</li>
+    <li>Mouse</li>
+    <li>Microphone</li>
+    <li>Camera or webcam</li>
+    <li>Scanner</li>
+    <li>Touchscreen</li>
+    <li>Game controller</li>
+</ul>
+
+
+<h3>Output Devices</h3>
+
+<p>
+    An output device allows a computer to provide information
+    <strong>to</strong> the user.
+</p>
+
+<ul>
+    <li>Monitor</li>
+    <li>Speakers</li>
+    <li>Headphones</li>
+    <li>Printer</li>
+    <li>Projector</li>
+</ul>
+
+
+<div class="knowledge-check">
+
+    <h3>Think About It</h3>
+
+    <p>
+        Is a touchscreen an input device or an output device?
+    </p>
+
+    <details>
+
+        <summary>Show Answer</summary>
+
+        <p>
+            <strong>A touchscreen is both.</strong>
+        </p>
+
+        <p>
+            The screen provides visual output to the user while
+            touching the screen provides input to the computer.
+        </p>
+
+    </details>
+
+</div>
+
+
+<!-- LESSON 1.5 -->
+
+<h2 id="lesson5">Lesson 1.5 — Types of Computers</h2>
+
+<p>
+    Computers come in many different forms. The appropriate type
+    of computer depends on what the computer needs to accomplish.
+</p>
+
+
+<div class="component-grid">
+
+    <div class="component">
+
+        <h3>Desktop Computer</h3>
+
+        <p>
+            A computer designed primarily for use at a desk or
+            workstation.
+        </p>
+
+    </div>
+
+
+    <div class="component">
+
+        <h3>Laptop</h3>
+
+        <p>
+            A portable computer containing an integrated display,
+            keyboard, pointing device, and battery.
+        </p>
+
+    </div>
+
+
+    <div class="component">
+
+        <h3>Tablet</h3>
+
+        <p>
+            A portable computer designed primarily around a
+            touchscreen interface.
+        </p>
+
+    </div>
+
+
+    <div class="component">
+
+        <h3>Smartphone</h3>
+
+        <p>
+            A mobile computing device combining communication,
+            Internet access, applications, cameras, sensors, and
+            general computing capabilities.
+        </p>
+
+    </div>
+
+
+    <div class="component">
+
+        <h3>Workstation</h3>
+
+        <p>
+            A high-performance computer commonly designed for
+            specialized professional or technical workloads.
+        </p>
+
+    </div>
+
+
+    <div class="component">
+
+        <h3>Server</h3>
+
+        <p>
+            A computer designed to provide services, applications,
+            data, or other resources to other computers.
+        </p>
+
+    </div>
+
+
+    <div class="component">
+
+        <h3>Embedded Computer</h3>
+
+        <p>
+            A computer incorporated into another device to perform
+            specific functions.
+        </p>
+
+    </div>
+
+
+    <div class="component">
+
+        <h3>Single-Board Computer</h3>
+
+        <p>
+            A complete computer built primarily onto a single
+            circuit board. The Raspberry Pi is a well-known example.
+        </p>
+
+    </div>
+
+</div>
+
+
+<div class="concept">
+
+    <h3>What About Virtual Computers?</h3>
+
+    <p>
+        Computers do not always correspond to one physical machine.
+        Through a technology called <strong>virtualization</strong>,
+        one physical computer can run multiple virtual computers
+        called <strong>virtual machines</strong>.
+    </p>
+
+    <p>
+        Virtual machines can run their own operating systems and
+        applications while sharing the physical resources of the
+        host computer.
+    </p>
+
+    <p>
+        We will encounter concepts such as virtualization again
+        as we explore operating systems, networking, and
+        cybersecurity.
+    </p>
+
+</div>
+
+
+<!-- OPERATING SYSTEMS -->
+
+<h2 id="software">Operating Systems and Applications</h2>
+
+<p>
+    Hardware alone does not make a modern computer useful.
+    Computers also depend on <strong>software</strong>.
+</p>
+
+
+<h3>Operating Systems</h3>
+
+<p>
+    One of the most important pieces of software is the
+    <strong>operating system (OS)</strong>.
+</p>
+
+<p>
+    The operating system manages the computer's hardware and
+    provides an environment in which other software can operate.
+</p>
+
+<p>Examples of operating systems and operating-system families include:</p>
+
+<ul>
+    <li>Microsoft Windows</li>
+    <li>macOS</li>
+    <li>Linux</li>
+    <li>Unix and Unix-like operating systems</li>
+    <li>Solaris</li>
+    <li>Raspberry Pi OS</li>
+</ul>
+
+
+<div class="did-you-know">
+
+    <h3>Coming Up in Module 2</h3>
+
+    <p>
+        In the next module, you will work directly with
+        <strong>Windows and Linux</strong>.
+    </p>
+
+    <p>
+        You will learn how each operating system organizes files
+        and directories and practice navigating through those
+        directories to locate, create, copy, move, and manage files.
+    </p>
+
+</div>
+
+
+<!-- APPLICATIONS -->
+
+<h3>Applications</h3>
+
+<p>
+    <strong>Applications</strong> are software programs that allow
+    users to perform particular tasks. Applications operate using
+    services provided by the operating system.
+</p>
+
+<p>Examples include:</p>
+
+
+<table>
+
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Examples</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <tr>
+            <td>Word Processing</td>
+            <td>Microsoft Word, Apple Pages</td>
+        </tr>
+
+        <tr>
+            <td>Spreadsheets</td>
+            <td>Microsoft Excel, Apple Numbers</td>
+        </tr>
+
+        <tr>
+            <td>Communication</td>
+            <td>Microsoft Teams</td>
+        </tr>
+
+        <tr>
+            <td>Databases</td>
+            <td>Microsoft Access</td>
+        </tr>
+
+        <tr>
+            <td>Web Browsers</td>
+            <td>
+                Firefox, Google Chrome, Microsoft Edge,
+                Brave, Opera, Safari
+            </td>
+        </tr>
+
+        <tr>
+            <td>Media</td>
+            <td>QuickTime Player</td>
+        </tr>
+
+        <tr>
+            <td>Text Editing</td>
+            <td>TextEdit</td>
+        </tr>
+
+    </tbody>
+
+</table>
+
+
+<div class="concept">
+
+    <h3>How Does It All Work Together?</h3>
+
+    <div class="computer-cycle">
+
+        <div class="cycle-box">You</div>
+
+        <div class="arrow">→</div>
+
+        <div class="cycle-box">Application</div>
+
+        <div class="arrow">→</div>
+
+        <div class="cycle-box">Operating System</div>
+
+        <div class="arrow">→</div>
+
+        <div class="cycle-box">Hardware</div>
+
+    </div>
+
+    <p>
+        You interact with an application. The application relies
+        on services provided by the operating system. The operating
+        system manages and communicates with the underlying hardware.
+    </p>
+
+    <p>
+        All of these layers work together to create the computing
+        experience you see on your screen.
+    </p>
+
+</div>
+
+
+<!-- FINAL KNOWLEDGE CHECK -->
+
+<div class="knowledge-check">
+
+    <h3>Knowledge Check</h3>
+
+    <p>
+        A computer is advertised as having
+        <strong>16 GB of RAM and a 1 TB SSD.</strong>
+        What does this mean?
+    </p>
+
+    <ol type="A">
+        <li>
+            It has 16 GB of permanent storage and 1 TB of
+            temporary memory.
+        </li>
+
+        <li>
+            It has 16 GB of working memory and 1 TB of storage.
+        </li>
+
+        <li>
+            It has a 16 GB processor and a 1 TB graphics card.
+        </li>
+
+        <li>
+            RAM and SSD refer to the same type of memory.
+        </li>
+    </ol>
+
+    <details>
+
+        <summary>Show Answer</summary>
+
+        <p><strong>B.</strong></p>
+
+        <p>
+            The computer has 16 GB of temporary working memory
+            (RAM) and approximately 1 TB of long-term storage
+            provided by its SSD.
+        </p>
+
+    </details>
+
+</div>
+
+
+<!-- ACTIVITY -->
+
+<h2 id="activity">
+    Hands-On Activity — What's Inside My Computer?
+</h2>
+
+
+<div class="assignment">
+
+    <h3>Your Task</h3>
+
+    <p>
+        Choose a computer that you have access to and identify
+        its basic specifications.
+    </p>
+
+    <p>
+        This can be your personal computer, a family computer,
+        or another computer that you have permission to use.
+    </p>
+
+
+    <h3>Part 1 — Identify Your Computer</h3>
+
+    <p>Record the following information:</p>
+
+    <ul>
+        <li>Computer manufacturer</li>
+        <li>Computer model</li>
+        <li>Operating system</li>
+        <li>Processor / CPU</li>
+        <li>Amount of RAM</li>
+        <li>Storage capacity</li>
+        <li>Storage type, if available</li>
+        <li>Graphics hardware, if available</li>
+    </ul>
+
+
+    <h3>Part 2 — Document Your Findings</h3>
+
+    <p>
+        Take a screenshot showing the system information that you
+        used to identify your computer's specifications.
+    </p>
+
+    <p>
+        Make sure that the important information is readable in
+        your screenshot.
+    </p>
+
+
+    <h3>Part 3 — Reflection</h3>
+
+    <ol>
+
+        <li>
+            What surprised you about the specifications of
+            your computer?
+        </li>
+
+        <li>
+            If you could upgrade one component, what would you
+            upgrade and why?
+        </li>
+
+        <li>
+            Would this computer be appropriate for basic schoolwork?
+            Explain your answer.
+        </li>
+
+        <li>
+            Would this computer be appropriate for more demanding
+            tasks such as gaming, video editing, or other
+            high-performance applications? Explain your reasoning.
+        </li>
+
+    </ol>
+
+
+    <h3>What to Submit</h3>
+
+    <ul>
+        <li>Your computer specifications</li>
+        <li>Your screenshot</li>
+        <li>Your answers to the reflection questions</li>
+    </ul>
+
+</div>
+
+
+<!-- SUMMARY -->
+
+<h2 id="summary">Module Summary</h2>
+
+<p>
+    In this module, you explored the development of computers from
+    the room-sized ENIAC to the wide variety of computing devices
+    that surround us today.
+</p>
+
+<p>
+    You learned that despite enormous differences in size,
+    appearance, and purpose, computers share several fundamental
+    concepts.
+</p>
+
+<ul>
+    <li>Computers accept input.</li>
+    <li>Computers process information.</li>
+    <li>Computers produce output.</li>
+    <li>Computers store information.</li>
+    <li>Hardware consists of physical computer components.</li>
+    <li>Software provides instructions for computer hardware.</li>
+    <li>The operating system manages hardware and supports applications.</li>
+</ul>
+
+<p>
+    You also learned the basic purposes of the CPU, motherboard,
+    RAM, storage, GPU, power supply, input devices, and output
+    devices.
+</p>
+
+<p>
+    These concepts provide the foundation for the rest of
+    <strong>COMP 1001 — Introduction to Computers</strong>.
+</p>
+
+
+<div class="did-you-know">
+
+    <h3>Next: Module 2 — Operating Systems & File Management</h3>
+
+    <p>
+        In Module 2, we will move from learning about computers to
+        working directly with them.
+    </p>
+
+    <p>
+        You will explore Windows and Linux, learn how operating
+        systems organize files and directories, navigate through
+        directory structures, and practice locating and managing
+        files.
+    </p>
+
+</div>
+
+
+</main>
+
+</div>
+
+
 <footer>
 
-    <p><strong>Introduction to Computers</strong></p>
+    <p>
+        <strong>COMP 1001 — Introduction to Computers</strong>
+    </p>
 
-    <p>Course materials created by Domonic Velarde</p>
+    <p>
+        Course materials created by Domonic Velarde
+    </p>
 
 </footer>
+
 
 </body>
 </html>
